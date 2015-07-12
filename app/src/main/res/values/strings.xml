@@ -6,4 +6,8 @@
     <string name="activities">Actividades</string>
     <string name="credits">Credits</string>
     <string name="settings">Preferences</string>
+    <string name="title_activity_exercise">exerciseActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_story">StoryActivity</string>
 </resources>

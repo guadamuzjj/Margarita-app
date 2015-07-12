@@ -19,6 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@mipmap/ic_book_white_48dp"
+            android:onClick="story"
             android:contentDescription="@string/read"/>
 
         <ImageButton
@@ -27,6 +28,7 @@
             android:layout_height="wrap_content"
             android:background="@mipmap/ic_extension_white_48dp"
             android:layout_alignParentRight="true"
+            android:onClick="exercise"
             android:contentDescription="@string/activities"/>
 
     </RelativeLayout>
@@ -49,6 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@mipmap/ic_settings_white_48dp"
+            android:onClick="settings"
             android:layout_alignParentRight="true" />
     </RelativeLayout>
 
