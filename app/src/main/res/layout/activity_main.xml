@@ -8,28 +8,58 @@
     android:background="#03A9F4"
     tools:context=".MainActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A Margarita Debayle"
+        android:id="@+id/textView"
+        android:textColor="#FFF"
+        android:textSize="26dp"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#FFF"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/btnRead"
+        android:layout_alignStart="@+id/btnRead"/>
+
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="60dp" >
+        android:layout_marginTop="70dp" >
 
         <ImageButton
             android:id="@+id/btnRead"
+            android:onClick="story"
+            android:background="@mipmap/ic_book_white_48dp"
+            android:contentDescription="@string/read"
+            style="@style/menu_buttons"/>
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@mipmap/ic_book_white_48dp"
-            android:onClick="story"
-            android:contentDescription="@string/read"/>
+            android:text="@string/read"
+            android:layout_marginLeft="15dp"
+            style="@style/desc_buttons" />
 
         <ImageButton
             android:id="@+id/btnActivities"
+            android:onClick="exercise"
+            android:background="@mipmap/ic_extension_white_48dp"
+            android:contentDescription="@string/activities"
+            android:layout_alignParentRight="true"
+            style="@style/menu_buttons"/>
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@mipmap/ic_extension_white_48dp"
-            android:layout_alignParentRight="true"
-            android:onClick="exercise"
-            android:contentDescription="@string/activities"/>
+            android:text="@string/activities"
+            android:layout_marginLeft="15dp"
+            android:layout_alignLeft="@+id/btnActivities"
+            style="@style/desc_buttons"/>
 
     </RelativeLayout>
 
@@ -42,17 +72,33 @@
 
         <ImageButton
             android:id="@+id/btnCredits"
+            android:background="@mipmap/ic_group_work_white_48dp"
+            android:contentDescription="@string/credits"
+            style="@style/menu_buttons" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@mipmap/ic_group_work_white_48dp" />
+            android:text="@string/credits"
+            android:layout_marginLeft="30dp"
+            style="@style/desc_buttons"/>
 
         <ImageButton
             android:id="@+id/btnSettings"
+            android:onClick="settings"
+            android:background="@mipmap/ic_settings_white_48dp"
+            android:contentDescription="@string/settings"
+            android:layout_alignParentRight="true"
+            style="@style/menu_buttons" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@mipmap/ic_settings_white_48dp"
-            android:onClick="settings"
-            android:layout_alignParentRight="true" />
+            android:text="@string/settings"
+            android:layout_marginLeft="17dp"
+            android:layout_alignLeft="@+id/btnSettings"
+            style="@style/desc_buttons"/>
+
     </RelativeLayout>
 
 </LinearLayout>
