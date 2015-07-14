@@ -2,14 +2,13 @@ package com.stormcoders.margarita_app;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.WindowManager;
+
 
 
 public class ExerciseActivity extends ActionBarActivity {
 
-    Utils utils = new Utils();
+    com.stormcoders.margarita_app.Utils utils = new com.stormcoders.margarita_app.Utils();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +16,7 @@ public class ExerciseActivity extends ActionBarActivity {
 
         // This, remove the status bar.
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_exercise);
+        setContentView(R.layout.activity_story);
         utils.toggleHideyBar(this);
     }
 }

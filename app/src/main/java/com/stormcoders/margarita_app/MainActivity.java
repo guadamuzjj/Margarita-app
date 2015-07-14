@@ -1,12 +1,12 @@
 package com.stormcoders.margarita_app;
 
-import android.os.Build;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.content.Intent;
 import android.view.WindowManager;
+
+import com.stormcoders.margarita_app.story.StoryActivity;
 
 
 public class MainActivity extends ActionBarActivity {
