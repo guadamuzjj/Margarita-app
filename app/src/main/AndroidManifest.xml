@@ -35,7 +35,7 @@
             android:theme="@android:style/Theme.Holo.NoActionBar">
         </activity>
         <activity
-            android:name=".ExerciseActivity"
+            android:name=".exercise.ExerciseActivity"
             android:label="@string/title_activity_story" >
         </activity>
     </application>
