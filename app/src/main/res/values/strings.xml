@@ -3,9 +3,9 @@
 
     <string name="action_settings">Settings</string>
     <string name="read">Leer Poema</string>
-    <string name="activities">Actividades</string>
-    <string name="credits">Creditos</string>
-    <string name="settings">Preferencias</string>
+    <string name="activities">Ir a actividades</string>
+    <string name="credits">Ver creditos</string>
+    <string name="settings">Ir a preferencias</string>
     <string name="title_activity_exercise">exerciseActivity</string>
 
     <string name="hello_world">Hello world!</string>
