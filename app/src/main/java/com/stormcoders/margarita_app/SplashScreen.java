@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.stormcoders.margarita_app.activity.MainActivity;
+
 public class SplashScreen extends Activity {
 
     private static final long SPLASH_SCREEN_DELAY = 2000;
