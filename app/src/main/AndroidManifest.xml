@@ -31,10 +31,6 @@
             android:label="@string/title_activity_exercise" >
         </activity>
         <activity
-            android:name=".story.FullScreenViewActivity"
-            android:theme="@android:style/Theme.Holo.NoActionBar">
-        </activity>
-        <activity
             android:name=".exercise.ExerciseActivity"
             android:label="@string/title_activity_story" >
         </activity>
