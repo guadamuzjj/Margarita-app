@@ -7,7 +7,7 @@
 
     <style name="text_view">
         <item name="android:textColor">#333</item>
-        <item name="android:textSize">16dp</item>
+        <item name="android:textSize">18dp</item>
         <item name="android:paddingLeft">5dp</item>
         <item name="android:paddingRight">4dp</item>
         <item name="android:layout_gravity">clip_vertical</item>
