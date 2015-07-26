@@ -1,60 +1,90 @@
 package com.stormcoders.margarita_app.story;
 
+
 import android.app.Activity;
-import android.content.res.Resources;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
-import android.util.TypedValue;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.util.Pair;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.stormcoders.margarita_app.R;
+import com.stormcoders.margarita_app.Utils;
 
-import java.util.ArrayList;
-
-public class StoryActivity extends Activity {
-
-    private Utils utils;
-    private ArrayList<String> imagePaths = new ArrayList<String>();
-    private GridViewImageAdapter adapter;
+public class StoryActivity extends ActionBarActivity
+        implements AdapterView.OnItemClickListener {
     private GridView gridView;
-    private int columnWidth;
+    private ChapterAdapter adapter;
+
+    Utils utils = new Utils();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        utils.toggleHideyBar(this);
+
         setContentView(R.layout.activity_story);
 
-        gridView = (GridView) findViewById(R.id.grid_view);
+        useToolbar();
 
-        utils = new Utils(this);
-
-        // Initilizing Grid View
-        InitilizeGridLayout();
-
-        // loading all image paths from SD card
-        imagePaths = utils.getFilePaths();
-
-        // Gridview adapter
-        adapter = new GridViewImageAdapter(StoryActivity.this, imagePaths,
-                columnWidth);
-
-        // setting grid view adapter
+        gridView = (GridView) findViewById(R.id.grid);
+        adapter = new ChapterAdapter(this);
         gridView.setAdapter(adapter);
+        gridView.setOnItemClickListener(this);
     }
 
-    private void InitilizeGridLayout() {
-        Resources r = getResources();
-        float padding = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
-                AppConstant.GRID_PADDING, r.getDisplayMetrics());
+    private void useToolbar() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+    }
 
-        columnWidth = (int) ((utils.getScreenWidth() - ((AppConstant.NUM_OF_COLUMNS + 1) * padding)) / AppConstant.NUM_OF_COLUMNS);
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_story, menu);
+        return true;
+    }
 
-        gridView.setNumColumns(AppConstant.NUM_OF_COLUMNS);
-        gridView.setColumnWidth(columnWidth);
-        gridView.setStretchMode(GridView.NO_STRETCH);
-        gridView.setPadding((int) padding, (int) padding, (int) padding,
-                (int) padding);
-        gridView.setHorizontalSpacing((int) padding);
-        gridView.setVerticalSpacing((int) padding);
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Chapter item = (Chapter) parent.getItemAtPosition(position);
+
+        Intent intent = new Intent(this, StoryDetail.class);
+        intent.putExtra(StoryDetail.EXTRA_PARAM_ID, item.getId());
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+
+            ActivityOptionsCompat activityOptions =
+                    ActivityOptionsCompat.makeSceneTransitionAnimation(
+                            this,
+                            new Pair<View, String>(view.findViewById(R.id.chapter_image),
+                                    StoryDetail.VIEW_NAME_HEADER_IMAGE)
+                    );
+
+            ActivityCompat.startActivity(this, intent, activityOptions.toBundle());
+        } else
+            startActivity(intent);
     }
 
 }

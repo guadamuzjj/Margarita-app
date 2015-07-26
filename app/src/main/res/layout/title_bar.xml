@@ -17,6 +17,6 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="1dp"
-        android:background="#222" />
+        android:background="@color/background_footer" />
 
 </LinearLayout>
