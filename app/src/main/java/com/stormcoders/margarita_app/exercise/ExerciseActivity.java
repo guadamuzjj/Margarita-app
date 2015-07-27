@@ -35,10 +35,10 @@ public class ExerciseActivity extends ActionBarActivity {
         rv.setLayoutManager(layoutManager);
 
         activity = new ArrayList<>();
-        activity.add(new Activity("Selección Multiple", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "#1ABC9C"));
-        activity.add(new Activity("Verdadero Y Falso", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "#F1C40F"));
+        activity.add(new Activity("Selección Multiple", "Selcciona la respuesta correcta a lo  que se te pide.", "#1ABC9C"));
+        activity.add(new Activity("Verdadero Y Falso", "Escriba Falso o Verdadero.", "#F1C40F"));
+        activity.add(new Activity("Ordenar", "Ordena las ideas relevantes como suceden en el poema.", "#2980b9"));
         activity.add(new Activity("Completar", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "#2C3E50"));
-        activity.add(new Activity("Ordenar", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "#2980b9"));
 
         rv.setAdapter(new ExerciseAdapter(activity, R.layout.exercise_row));
     }

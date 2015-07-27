@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
             android:padding="10dp"
-            style="@style/text_view" />
+            style="@style/text_view_menu" />
 
     </LinearLayout>
 

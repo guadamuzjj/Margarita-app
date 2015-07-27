@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Margarita-app</string>
+    <string name="app_name">A Margarita Debayle</string>
 
     <string name="action_settings">Settings</string>
     <string name="read">Leer Poema</string>
@@ -10,4 +10,38 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_story">StoryActivity</string>
+
+    <string-array name="multiple_choices">
+        <item>El personaje principal del poema es:|La Princesa,Margarita,El buen Jesús</item>
+        <item>¿Cuántas veces interviene el buen Jesús?|Dos Veces,Tres Veces,Una Vez</item>
+        <item>¿A quién va dirigido el poema?|A la Princesa,A Margarita,Al buen Jesús</item>
+        <item>¿Cuál es el papel del buen Jesús?|Es cumplir el rol de autoridad y poderío,Es de personaje principal de la obra y sobre quien giran todos los acontecimientos,Es esclarecer y consolar explicando que él le había ofrecido la rosa</item>
+        <item>La trama se desarrolla en un ambiente:|Mágico y lejano de la realidad,Paradisíaco: isla del Cardón - Corinto en Nicaragua,Portuario</item>
+    </string-array>
+
+    <string-array name="affirmations">
+        <item>Una princesa se remonta al cielo y corta una estrella para decorar su prendedor.</item>
+        <item>El papá no se disgusta por haber ido sin permiso.</item>
+        <item>El papá la acusa de cometer un capricho profano e insensato y decide castigarla.</item>
+        <item>Aparece “el buen Jesús” y le quita la estrella para llevarla a su lugar.</item>
+        <item>Los personajes del cuento son: Margarita, El rey, La princesa, el buen Jesús.</item>
+    </string-array>
+
+    <string-array name="sort_events">
+        <item>La niña sale en busca de la estrella.</item>
+        <item>El buen Jesús perdona a la princesa.</item>
+        <item>El rey tiene un palacio de diamantes.</item>
+        <item>Margarita, te voy a contar  un cuento.</item>
+        <item>El rey se enoja con la princesa.</item>
+    </string-array>
+
+    <string-array name="options_for_sort">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+
 </resources>

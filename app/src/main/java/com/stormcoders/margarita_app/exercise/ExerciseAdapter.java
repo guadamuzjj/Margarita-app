@@ -12,10 +12,8 @@ import android.widget.AdapterView;
 import android.widget.TextView;
 
 import com.stormcoders.margarita_app.R;
-import com.stormcoders.margarita_app.SettingsActivity;
 import com.stormcoders.margarita_app.activity.Activity;
 import com.stormcoders.margarita_app.activity.MainActivity;
-import com.stormcoders.margarita_app.story.StoryActivity;
 
 import java.util.List;
 
@@ -67,13 +65,18 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
 
             switch (position){
                 case 0:
-                    intent =  new Intent(context, SeleccionMultiple.class);
+                    intent =  new Intent(context, MultipleChoice.class);
+                    intent.putExtra("QESTION_NUMBER", 1);
                     break;
 
                 case 1:
+                    intent =  new Intent(context, TrueOrFalse.class);
+                    intent.putExtra("AFFIRMATION", 1);
                     break;
 
                 case 2:
+                    intent =  new Intent(context, SortEvents.class);
+                    intent.putExtra("SORT", 1);
                     break;
 
                 case 3:

@@ -28,7 +28,7 @@
             android:text="Selecciona la respuesta correcta en esta divertida trivia."
             android:layout_weight="1"
             android:layout_marginLeft="10dp"
-            style="@style/text_view" />
+            style="@style/text_view_menu" />
     </LinearLayout>
 
     <TextView
