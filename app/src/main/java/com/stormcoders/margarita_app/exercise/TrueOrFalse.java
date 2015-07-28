@@ -9,10 +9,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.stormcoders.margarita_app.R;
-import com.stormcoders.margarita_app.Utils;
 
 public class TrueOrFalse extends ActionBarActivity {
-    Utils utils = new Utils();
 
     Intent intent;
     TextView tvAffirmation;
@@ -25,9 +23,7 @@ public class TrueOrFalse extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.true_or_false);
-        utils.toggleHideyBar(this);
 
         tvAffirmation = (TextView) findViewById(R.id.tvAffirmation);
         rgOptions = (RadioGroup) findViewById(R.id.rgOptions);

@@ -1,7 +1,6 @@
 package com.stormcoders.margarita_app.story;
 
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -18,21 +17,17 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.stormcoders.margarita_app.R;
-import com.stormcoders.margarita_app.Utils;
 
 public class StoryActivity extends ActionBarActivity
         implements AdapterView.OnItemClickListener {
     private GridView gridView;
     private ChapterAdapter adapter;
 
-    Utils utils = new Utils();
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        utils.toggleHideyBar(this);
 
         setContentView(R.layout.activity_story);
 

@@ -3,7 +3,6 @@ package com.stormcoders.margarita_app.exercise;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.RadioButton;
@@ -11,12 +10,10 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.stormcoders.margarita_app.R;
-import com.stormcoders.margarita_app.Utils;
 
 import java.util.StringTokenizer;
 
 public class MultipleChoice extends ActionBarActivity {
-    Utils utils = new Utils();
 
     Intent intent;
     TextView tvQuestion;
@@ -32,9 +29,7 @@ public class MultipleChoice extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.multiple_choice);
-        utils.toggleHideyBar(this);
 
         tvQuestion = (TextView) findViewById(R.id.tvQuestion);
         rgOptions = (RadioGroup) findViewById(R.id.rgOptions);

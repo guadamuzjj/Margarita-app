@@ -6,15 +6,12 @@ import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.stormcoders.margarita_app.R;
-import com.stormcoders.margarita_app.Utils;
 
 public class SortEvents extends ActionBarActivity {
-    Utils utils = new Utils();
 
     Intent intent;
     TextView tvEvent;
@@ -27,9 +24,7 @@ public class SortEvents extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.sort_events);
-        utils.toggleHideyBar(this);
 
         tvEvent = (TextView) findViewById(R.id.tvEvent);
         spinner = (Spinner) findViewById(R.id.spinner);

@@ -4,15 +4,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.content.Intent;
 import android.view.WindowManager;
 
 import com.stormcoders.margarita_app.R;
-import com.stormcoders.margarita_app.SettingsActivity;
-import com.stormcoders.margarita_app.Utils;
-import com.stormcoders.margarita_app.exercise.ExerciseActivity;
-import com.stormcoders.margarita_app.story.StoryActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +14,7 @@ import java.util.List;
 
 public class MainActivity extends ActionBarActivity {
 
-    Utils utils = new Utils();
+
 
     private List<Activity> activity;
 
@@ -28,9 +22,7 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
-        utils.toggleHideyBar(this);
 
         RecyclerView rv = (RecyclerView)findViewById(R.id.rvContent);
         rv.setHasFixedSize(true);

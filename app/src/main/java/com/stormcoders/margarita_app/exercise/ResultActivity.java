@@ -1,11 +1,8 @@
 package com.stormcoders.margarita_app.exercise;
 
-import android.content.ComponentName;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -13,10 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.stormcoders.margarita_app.R;
-import com.stormcoders.margarita_app.Utils;
 
 public class ResultActivity  extends ActionBarActivity {
-    Utils utils = new Utils();
 
     final int ExerciseAnswers = 5;
     TextView tvResult;
@@ -28,9 +23,7 @@ public class ResultActivity  extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.result_activity);
-        utils.toggleHideyBar(this);
 
         tvResult = (TextView) findViewById(R.id.tvResult);
         ivResult = (ImageView) findViewById(R.id.ivResult);
