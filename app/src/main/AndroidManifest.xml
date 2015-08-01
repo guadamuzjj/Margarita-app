@@ -49,18 +49,23 @@
         </activity>
 
         <activity
-            android:name=".exercise.MultipleChoice" >
+            android:name=".exercise.MultipleChoice"
+            android:noHistory="true"
+            android:label="@string/title_multiple_choice" >
         </activity>
         <activity
-            android:name=".exercise.ResultActivity" >
-        </activity>
-        <activity
-            android:name=".exercise.TrueOrFalse" >
+            android:name=".exercise.TrueOrFalse"
+            android:noHistory="true"
+            android:label="@string/title_true_or_false" >
         </activity>
         <activity
             android:name=".exercise.SortEvents" >
         </activity>
-
+        <activity
+            android:name=".exercise.ResultActivity"
+            android:noHistory="true"
+            android:label="@string/title_result_activity" >
+        </activity>
     </application>
 
 </manifest>

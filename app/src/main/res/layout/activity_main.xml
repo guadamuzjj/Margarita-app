@@ -3,16 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin" >
-
-    <include layout="@layout/title_bar"/>
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" >
 
     <android.support.v7.widget.RecyclerView
-        android:scrollbars="vertical"
         android:id="@+id/rvContent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="70dp"
-        android:layout_marginBottom="30dp"/>
+        android:layout_height="match_parent" />
 
 </RelativeLayout>

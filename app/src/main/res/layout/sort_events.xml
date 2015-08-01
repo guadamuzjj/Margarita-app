@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="La niña sale en busca de la estrella."
-            style="@style/text_view_menu_header"/>
+            style="@style/exercise_description"/>
 
         <Spinner
             android:id="@+id/spinner"

@@ -1,40 +1,54 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/relative_layout"
+    android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="50dp"
+    android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" >
 
-    <RadioGroup
-        android:id="@+id/rgOptions"
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/tvAffirmation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Una princesa se remonta al cielo y corta una estrella para decorar su prendedor."
-            style="@style/text_view_menu_header"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/true_or_false_description"
+        android:textSize="20sp"
+        style="@style/exercise_description"/>
 
-        <RadioButton
-            android:id="@+id/rbTrue"
-            android:layout_width="wrap_content"
+        <RadioGroup
+            android:id="@+id/rgOptions"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Verdadero"
-            style="@style/radio_buttons"/>
+            android:orientation="vertical" >
 
-        <RadioButton android:id="@+id/rbFalse"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Falso"
-            style="@style/radio_buttons"/>
+            <TextView
+                android:id="@+id/tvAffirmation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Una princesa se remonta al cielo y corta una estrella para decorar su prendedor."
+                style="@style/exercise_description"/>
 
-    </RadioGroup>
+            <RadioButton
+                android:id="@+id/rbTrue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Verdadero"
+                style="@style/options"/>
+
+            <RadioButton android:id="@+id/rbFalse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Falso"
+                style="@style/options"/>
+
+        </RadioGroup>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/btNext"

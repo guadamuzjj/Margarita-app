@@ -1,10 +1,8 @@
-<android.support.v7.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/cvActivities"
     android:foreground="?android:attr/selectableItemBackground"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:clickable="true"
     style="@style/card_view">
 
     <LinearLayout
@@ -17,19 +15,16 @@
             android:id="@+id/tvName"
             android:layout_width="fill_parent"
             android:layout_height="100dp"
-            android:layout_marginBottom="5dp"
             android:padding="30dp"
-            android:textSize="32dp"
-            android:textColor="#FFF"
-            android:textStyle="bold" />
+            android:textSize="32sp"
+            style="@style/text_view_general"/>
 
         <TextView
             android:id="@+id/tvDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-            android:padding="10dp"
-            style="@style/text_view_menu" />
+            style="@style/activity_description" />
 
     </LinearLayout>
 

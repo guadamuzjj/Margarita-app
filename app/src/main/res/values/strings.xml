@@ -1,16 +1,20 @@
 <resources>
 
-    <string name="app_name">Margarita Debayle</string>
-    <string name="action_settings">Settings</string>
-    <string name="read">Leer Poema</string>
-    <string name="activities">Ir a actividades</string>
-    <string name="credits">Ver creditos</string>
-    <string name="settings">Ir a preferencias</string>
-    <string name="title_activity_exercise">exerciseActivity</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="title_activity_story">StoryActivity</string>
-    <string name="titulo_actividad_detalle">Actividad De Detalle</string>
+    <string name="app_name">A Margarita Debayle</string>
+    <string name="action_settings">Menu</string>
+    <string name="home">Menu Principal</string>
+    <string name="read_poem">Leer Poema</string>
+    <string name="credits">Créditos</string>
+    <string name="title_activity_story">Selección de Estrofas</string>
+    <string name="title_activity_exercise">Ejercicios</string>
+    <string name="titulo_actividad_detalle">Lectura de Poema</string>
+    <string name="title_multiple_choice">Selección Multiple</string>
+    <string name="title_true_or_false">Falso o Verdadero</string>
+    <string name="title_result_activity">Resultados</string>
     <string name="nombre_transicion_imagen">imagen_compartida</string>
+
+    <string name="multiple_choice_description">Encierra la palabra que responda a lo  que se te pide.</string>
+    <string name="true_or_false_description">Escriba Falso o Verdadero.</string>
 
     <string-array name="multiple_choices">
         <item>El personaje principal del poema es:|La Princesa,Margarita,El buen Jesús</item>
