@@ -29,9 +29,8 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
 
     @Override
     public void onBindViewHolder(ExerciseViewHolder activityViewHolder, int i) {
-        activityViewHolder.icon.setBackgroundColor(Color.parseColor(activity.get(i).color));
-        activityViewHolder.name.setText(activity.get(i).name);
-        activityViewHolder.description.setText(activity.get(i).description);
+        activityViewHolder.cv.setCardBackgroundColor(Color.parseColor(activity.get(i).color));
+        activityViewHolder.exerciseName.setText(activity.get(i).name);
     }
 
     @Override
@@ -43,9 +42,7 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
     public static class ExerciseViewHolder extends RecyclerView.ViewHolder implements AdapterView.OnClickListener {
         private Context context;
         CardView cv;
-        TextView icon;
-        TextView name;
-        TextView description;
+        TextView exerciseName;
 
         ExerciseViewHolder(View itemView) {
             super(itemView);
@@ -53,9 +50,7 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
 
             itemView.setOnClickListener(this);
             cv = (CardView) itemView.findViewById(R.id.cvExercise);
-            icon = (TextView) itemView.findViewById(R.id.tvIcon);
-            name = (TextView) itemView.findViewById(R.id.tvName2);
-            description = (TextView) itemView.findViewById(R.id.tvDescription2);
+            exerciseName = (TextView) itemView.findViewById(R.id.tvExerciseName);
         }
 
         @Override

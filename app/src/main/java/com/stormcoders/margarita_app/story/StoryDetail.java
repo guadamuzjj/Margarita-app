@@ -27,8 +27,6 @@ public class StoryDetail extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_story_detail);
 
-        useToolbar();
-
         // Obtener el chapter con el identificador establecido en la actividad principal
         itemDetail = Chapter.getItem(getIntent().getIntExtra(EXTRA_PARAM_ID, 0));
 
@@ -41,10 +39,5 @@ public class StoryDetail extends ActionBarActivity {
         Glide.with(extendedImage.getContext())
                 .load(itemDetail.getIdDrawable())
                 .into(extendedImage);
-    }
-
-    private void useToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
     }
 }

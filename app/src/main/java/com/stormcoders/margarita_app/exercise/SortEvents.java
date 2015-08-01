@@ -84,7 +84,6 @@ public class SortEvents extends ActionBarActivity {
         intent = new Intent(this, classDest);
         intent.putExtra("SORT", nEvent);
         option = (spinner.getSelectedItem().toString() == correctIndex ) ? 1: 0;
-        Log.i("TAGGGG", ""+option);
         prevOption = getIntent().getIntExtra("OPTION", 0);
         intent.putExtra("OPTION", option + prevOption);
     }

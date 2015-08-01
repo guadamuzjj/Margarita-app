@@ -3,17 +3,27 @@ package com.stormcoders.margarita_app.exercise;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.stormcoders.margarita_app.ColorLibrary;
 import com.stormcoders.margarita_app.R;
+import com.stormcoders.margarita_app.activity.MainActivity;
+import com.stormcoders.margarita_app.story.StoryActivity;
 
 import java.util.StringTokenizer;
 
 public class MultipleChoice extends ActionBarActivity {
+
+    private ColorLibrary colors = new ColorLibrary();
 
     Intent intent;
     TextView tvQuestion;
@@ -24,11 +34,13 @@ public class MultipleChoice extends ActionBarActivity {
     int prevOption;
     int option;
     int qestionNumber;
+    RelativeLayout mainLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        mainLayout = (RelativeLayout) findViewById(R.id.main_layout);
         setContentView(R.layout.multiple_choice);
 
         tvQuestion = (TextView) findViewById(R.id.tvQuestion);
@@ -47,24 +59,69 @@ public class MultipleChoice extends ActionBarActivity {
             case 4: getQuestion(3); break;
             case 5: getQuestion(4); break;
         }
+
+        /*Button btNext = (Button) findViewById(R.id.btNext);
+        btNext.setOnClickListener( new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                int color = colors.getColor();
+                mainLayout.setBackgroundColor(color);
+            }
+        });*/
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent = new Intent();
+        int id = item.getItemId();
+
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        switch (id) {
+            case R.id.home:
+                intent =  new Intent(MultipleChoice.this, MainActivity.class);
+                break;
+            case R.id.read_poem:
+                intent =  new Intent(MultipleChoice.this, StoryActivity.class);
+                break;
+            case R.id.exercises:
+                intent =  new Intent(MultipleChoice.this, ExerciseActivity.class);
+                break;
+            case R.id.credits:
+                intent =  new Intent(MultipleChoice.this, ExerciseActivity.class);
+                break;
+        }
+
+        startActivity(intent);
+        return super.onOptionsItemSelected(item);
     }
 
     public void start(View view) {
+
         switch (qestionNumber) {
             case 1:
-                nextQuestion(MultipleChoice.class, 2, 1);
+                nextQuestion(MultipleChoice.class, 2, 0);
                 break;
             case 2:
-                nextQuestion(MultipleChoice.class, 3, 3);
+                nextQuestion(MultipleChoice.class, 3, 2);
                 break;
             case 3:
-                nextQuestion(MultipleChoice.class, 4, 2);
+                nextQuestion(MultipleChoice.class, 4, 1);
                 break;
             case 4:
-                nextQuestion(MultipleChoice.class, 5, 3);
+                nextQuestion(MultipleChoice.class, 5, 2);
                 break;
             case 5:
-                nextQuestion(ResultActivity.class, 6, 1);
+                nextQuestion(ResultActivity.class, 6, 0);
                 intent.putExtra("FROM", "MultipleChoice");
                 break;
             default:
@@ -96,6 +153,9 @@ public class MultipleChoice extends ActionBarActivity {
         intent = new Intent(this, classDest);
         intent.putExtra("QESTION_NUMBER", nQuestion);
         option = (rgOptions.indexOfChild(findViewById(rgOptions.getCheckedRadioButtonId())) == correctIndex ) ? 1: 0;
+        Log.i("CorrectIndex", "" + correctIndex);
+        Log.i("ActualOption", "" + rgOptions.indexOfChild(findViewById(rgOptions.getCheckedRadioButtonId())));
+        Log.i("Result", "" + option);
         prevOption = getIntent().getIntExtra("OPTION", 0);
         intent.putExtra("OPTION", option + prevOption);
     }

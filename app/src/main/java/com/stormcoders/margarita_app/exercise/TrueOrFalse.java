@@ -3,14 +3,23 @@ package com.stormcoders.margarita_app.exercise;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.stormcoders.margarita_app.ColorLibrary;
 import com.stormcoders.margarita_app.R;
+import com.stormcoders.margarita_app.activity.MainActivity;
+import com.stormcoders.margarita_app.story.StoryActivity;
 
 public class TrueOrFalse extends ActionBarActivity {
+
+    private ColorLibrary colors = new ColorLibrary();
 
     Intent intent;
     TextView tvAffirmation;
@@ -18,6 +27,7 @@ public class TrueOrFalse extends ActionBarActivity {
     int prevOption;
     int option;
     int affirmationNumber;
+    RelativeLayout mainLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +35,13 @@ public class TrueOrFalse extends ActionBarActivity {
 
         setContentView(R.layout.true_or_false);
 
+        int color = colors.getColor();
+
+        mainLayout = (RelativeLayout) findViewById(R.id.main_layout);
         tvAffirmation = (TextView) findViewById(R.id.tvAffirmation);
         rgOptions = (RadioGroup) findViewById(R.id.rgOptions);
+
+        mainLayout.setBackgroundColor(color);
 
         affirmationNumber = getIntent().getIntExtra("AFFIRMATION", 1);
 
@@ -39,7 +54,42 @@ public class TrueOrFalse extends ActionBarActivity {
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent = new Intent();
+        int id = item.getItemId();
+
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        switch (id) {
+            case R.id.home:
+                intent =  new Intent(TrueOrFalse.this, MainActivity.class);
+                break;
+            case R.id.read_poem:
+                intent =  new Intent(TrueOrFalse.this, StoryActivity.class);
+                break;
+            case R.id.exercises:
+                intent =  new Intent(TrueOrFalse.this, ExerciseActivity.class);
+                break;
+            case R.id.credits:
+                intent =  new Intent(TrueOrFalse.this, ExerciseActivity.class);
+                break;
+        }
+
+        startActivity(intent);
+        return super.onOptionsItemSelected(item);
+    }
+
     public void start(View view) {
+
         switch (affirmationNumber) {
             case 1:
                 nextAffirmation(TrueOrFalse.class, 2, 1);
@@ -79,6 +129,7 @@ public class TrueOrFalse extends ActionBarActivity {
         intent = new Intent(this, classDest);
         intent.putExtra("AFFIRMATION", nAffirmation);
         option = (rgOptions.indexOfChild(findViewById(rgOptions.getCheckedRadioButtonId())) == correctIndex ) ? 1: 0;
+        Log.i("TAGGGGG", ""+option);
         prevOption = getIntent().getIntExtra("OPTION", 0);
         intent.putExtra("OPTION", option + prevOption);
     }

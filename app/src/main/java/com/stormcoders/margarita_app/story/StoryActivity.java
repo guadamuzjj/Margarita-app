@@ -1,6 +1,5 @@
 package com.stormcoders.margarita_app.story;
 
-
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -8,11 +7,9 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.util.Pair;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
@@ -20,10 +17,6 @@ import com.stormcoders.margarita_app.R;
 
 public class StoryActivity extends ActionBarActivity
         implements AdapterView.OnItemClickListener {
-    private GridView gridView;
-    private ChapterAdapter adapter;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,17 +24,10 @@ public class StoryActivity extends ActionBarActivity
 
         setContentView(R.layout.activity_story);
 
-        useToolbar();
-
-        gridView = (GridView) findViewById(R.id.grid);
-        adapter = new ChapterAdapter(this);
+        GridView gridView = (GridView) findViewById(R.id.grid);
+        ChapterAdapter adapter = new ChapterAdapter(this);
         gridView.setAdapter(adapter);
         gridView.setOnItemClickListener(this);
-    }
-
-    private void useToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
     }
 
     @Override
@@ -81,5 +67,4 @@ public class StoryActivity extends ActionBarActivity
         } else
             startActivity(intent);
     }
-
 }
