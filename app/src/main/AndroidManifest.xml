@@ -59,7 +59,14 @@
             android:label="@string/title_true_or_false" >
         </activity>
         <activity
-            android:name=".exercise.SortEvents" >
+            android:name=".exercise.SortEvents"
+            android:noHistory="true"
+            android:label="@string/title_sort" >
+        </activity>
+        <activity
+            android:name=".exercise.WordsComplete"
+            android:noHistory="true"
+            android:label="@string/title_complete" >
         </activity>
         <activity
             android:name=".exercise.ResultActivity"

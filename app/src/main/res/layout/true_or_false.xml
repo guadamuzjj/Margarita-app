@@ -1,62 +1,68 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main_layout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" >
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    android:fillViewport="true">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical" >
+    <RelativeLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/true_or_false_description"
-        android:textSize="20sp"
-        style="@style/exercise_description"/>
-
-        <RadioGroup
-            android:id="@+id/rgOptions"
+        <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:orientation="vertical" >
 
-            <TextView
-                android:id="@+id/tvAffirmation"
-                android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/true_or_false_description"
+            android:textSize="20sp"
+            style="@style/exercise_description"/>
+
+            <RadioGroup
+                android:id="@+id/rgOptions"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Una princesa se remonta al cielo y corta una estrella para decorar su prendedor."
-                style="@style/exercise_description"/>
+                android:orientation="vertical" >
 
-            <RadioButton
-                android:id="@+id/rbTrue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Verdadero"
-                style="@style/options"/>
+                <TextView
+                    android:id="@+id/tvAffirmation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Una princesa se remonta al cielo y corta una estrella para decorar su prendedor."
+                    style="@style/exercise_description"/>
 
-            <RadioButton android:id="@+id/rbFalse"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Falso"
-                style="@style/options"/>
+                <RadioButton
+                    android:id="@+id/rbTrue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Verdadero"
+                    style="@style/options"/>
 
-        </RadioGroup>
+                <RadioButton android:id="@+id/rbFalse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Falso"
+                    style="@style/options"/>
 
-    </LinearLayout>
+            </RadioGroup>
 
-    <Button
-        android:id="@+id/btNext"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Siguiente"
-        android:onClick="start"
-        style="@style/button_next"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="start"
+            style="@style/button_next"/>
 
 
-</RelativeLayout>
+    </RelativeLayout>
+
+</ScrollView>

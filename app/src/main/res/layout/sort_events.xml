@@ -1,40 +1,54 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/relative_layout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="50dp"
-    android:paddingBottom="@dimen/activity_vertical_margin" >
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    android:fillViewport="true">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin" >
 
-        <TextView
-            android:id="@+id/tvEvent"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="La niña sale en busca de la estrella."
-            style="@style/exercise_description"/>
+            android:orientation="vertical">
 
-        <Spinner
-            android:id="@+id/spinner"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sort_description"
+                android:textSize="20sp"
+                style="@style/exercise_description"/>
+
+            <TextView
+                android:id="@+id/tvEvent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="La niña sale en busca de la estrella."
+                style="@style/exercise_description"/>
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:spinnerMode="dialog"
+                android:entries="@array/options_for_sort"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btNext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:entries="@array/options_for_sort"/>
+            android:onClick="start"
+            style="@style/button_next"/>
 
-    </LinearLayout>
+    </RelativeLayout>
 
-    <Button
-        android:id="@+id/btNext"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Siguiente"
-        android:onClick="start"
-        style="@style/button_next"/>
-
-</RelativeLayout>
+</ScrollView>

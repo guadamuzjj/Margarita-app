@@ -41,7 +41,7 @@
                 android:id="@+id/btFinish"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Intentar de Nuevo"
+                android:text="Intentar de nuevo"
                 android:onClick="tryAgain"
                 android:visibility="gone"
                 style="?android:attr/borderlessButtonStyle" />

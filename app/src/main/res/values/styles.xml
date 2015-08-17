@@ -10,9 +10,7 @@
     </style>
 
     <style name="text_view_general">
-        <item name="android:textColor">#FFF</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:layout_gravity">center_horizontal</item>
         <item name="android:layout_marginBottom">5dp</item>
     </style>
 
@@ -38,11 +36,9 @@
     </style>
 
     <style name="button_next">
-        <item name="android:textSize">22sp</item>
-        <item name="android:textColor">#FFF</item>
-        <item name="android:background">@color/primaryColor</item>
         <item name="android:layout_alignParentBottom">true</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:text">Siguiente</item>
+        <item name="android:layout_alignParentRight">true</item>
     </style>
 
     <style name="text_view_results">

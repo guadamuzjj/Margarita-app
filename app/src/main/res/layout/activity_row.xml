@@ -17,6 +17,7 @@
             android:layout_height="100dp"
             android:padding="30dp"
             android:textSize="32sp"
+            android:textColor="#fff"
             style="@style/text_view_general"/>
 
         <TextView

@@ -1,21 +1,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto" >
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
-    <item android:id="@+id/home"
-        android:title="@string/home"
-        android:orderInCategory="100"
-        app:showAsAction="never"/>
-    <item android:id="@+id/read_poem"
-        android:title="@string/read_poem"
-        android:orderInCategory="100"
-        app:showAsAction="never"/>
-    <item android:id="@+id/exercises"
-        android:title="@string/title_activity_exercise"
-        android:orderInCategory="100"
-        app:showAsAction="never"/>
-    <item android:id="@+id/credits"
-        android:title="@string/credits"
-        android:orderInCategory="100"
-        app:showAsAction="never"/>
+        android:orderInCategory="100" app:showAsAction="always"
+        android:icon="@mipmap/ic_more_vert_white_24dp">
+        <menu>
+            <item android:id="@+id/home"
+                android:title="@string/home" />
+            <item android:id="@+id/read_poem"
+                android:title="@string/read_poem" />
+            <item android:id="@+id/exercises"
+                android:title="@string/title_activity_exercise" />
+            <item android:id="@+id/credits"
+                android:title="@string/credits" />
+        </menu>
+
+    </item>
+
 </menu>

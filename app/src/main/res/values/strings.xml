@@ -10,11 +10,16 @@
     <string name="titulo_actividad_detalle">Lectura de Poema</string>
     <string name="title_multiple_choice">Selección Multiple</string>
     <string name="title_true_or_false">Falso o Verdadero</string>
+    <string name="title_sort">Ordenar Ideas</string>
+    <string name="title_complete">Completar Párrafos</string>
     <string name="title_result_activity">Resultados</string>
     <string name="nombre_transicion_imagen">imagen_compartida</string>
+    <string name="entrar">Entrar</string>
 
     <string name="multiple_choice_description">Encierra la palabra que responda a lo  que se te pide.</string>
     <string name="true_or_false_description">Escriba Falso o Verdadero.</string>
+    <string name="sort_description">Ordena las ideas relevantes como suceden en el poema.</string>
+    <string name="complete_description">Recuerde el poema y completa los huecos que faltan.</string>
 
     <string-array name="multiple_choices">
         <item>El personaje principal del poema es:|La Princesa,Margarita,El buen Jesús</item>
@@ -34,9 +39,9 @@
 
     <string-array name="sort_events">
         <item>La niña sale en busca de la estrella.</item>
-        <item>El buen Jesús perdona a la princesa.</item>
         <item>El rey tiene un palacio de diamantes.</item>
         <item>Margarita, te voy a contar  un cuento.</item>
+        <item>La princesa vio una estrella brillar</item>
         <item>El rey se enoja con la princesa.</item>
     </string-array>
 
@@ -46,7 +51,29 @@
         <item>3</item>
         <item>4</item>
         <item>5</item>
-        <item>6</item>
+    </string-array>
+
+    <string-array name="words_complete">
+        <item>Este era un _ que tenía un palacio de _,una tienda hecha del díay un rebaño de _,un kiosco de malaquita,un gran _ de tisú,y una gentil _,tan bonita,_,tan bonita como tú.</item>
+        <item>La _ se entristece por su dulce _ de luz, cuando entonces aparece sonriendo el Buen _. La _ está bella, pues ya tiene el _ en que lucen, con la _,verso, perla, pluma y flor.</item>
+    </string-array>
+
+    <string-array name="options_complete_1">
+        <item>Rey</item>
+        <item>Diamantes</item>
+        <item>Elefantes</item>
+        <item>Manto</item>
+        <item>Princesita</item>
+        <item>Margarita</item>
+    </string-array>
+
+    <string-array name="options_complete_2">
+        <item>Princesa</item>
+        <item>Flor</item>
+        <item>Jesús</item>
+        <item>Princesita</item>
+        <item>Prendedor</item>
+        <item>Estrella</item>
     </string-array>
 
 </resources>
