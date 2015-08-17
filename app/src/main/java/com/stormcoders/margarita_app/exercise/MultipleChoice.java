@@ -40,15 +40,18 @@ public class MultipleChoice extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mainLayout = (RelativeLayout) findViewById(R.id.main_layout);
         setContentView(R.layout.multiple_choice);
 
+        int color = colors.getColor();
+
+        mainLayout = (RelativeLayout) findViewById(R.id.main_layout);
         tvQuestion = (TextView) findViewById(R.id.tvQuestion);
         rgOptions = (RadioGroup) findViewById(R.id.rgOptions);
 
         rbOption1 = (RadioButton) findViewById(R.id.rbOption1);
         rbOption2 = (RadioButton) findViewById(R.id.rbOption2);
         rbOption3 = (RadioButton) findViewById(R.id.rbOption3);
+        mainLayout.setBackgroundColor(color);
 
         qestionNumber = getIntent().getIntExtra("QESTION_NUMBER", 1);
 
@@ -59,16 +62,6 @@ public class MultipleChoice extends ActionBarActivity {
             case 4: getQuestion(3); break;
             case 5: getQuestion(4); break;
         }
-
-        /*Button btNext = (Button) findViewById(R.id.btNext);
-        btNext.setOnClickListener( new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                int color = colors.getColor();
-                mainLayout.setBackgroundColor(color);
-            }
-        });*/
     }
 
     @Override
@@ -153,10 +146,10 @@ public class MultipleChoice extends ActionBarActivity {
         intent = new Intent(this, classDest);
         intent.putExtra("QESTION_NUMBER", nQuestion);
         option = (rgOptions.indexOfChild(findViewById(rgOptions.getCheckedRadioButtonId())) == correctIndex ) ? 1: 0;
-        Log.i("CorrectIndex", "" + correctIndex);
-        Log.i("ActualOption", "" + rgOptions.indexOfChild(findViewById(rgOptions.getCheckedRadioButtonId())));
-        Log.i("Result", "" + option);
         prevOption = getIntent().getIntExtra("OPTION", 0);
         intent.putExtra("OPTION", option + prevOption);
+
+        int attempts = getIntent().getIntExtra("ATTEMPTS", 3);
+        intent.putExtra("ATTEMPTS", attempts);
     }
 }

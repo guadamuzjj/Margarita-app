@@ -40,7 +40,6 @@ public class TrueOrFalse extends ActionBarActivity {
         mainLayout = (RelativeLayout) findViewById(R.id.main_layout);
         tvAffirmation = (TextView) findViewById(R.id.tvAffirmation);
         rgOptions = (RadioGroup) findViewById(R.id.rgOptions);
-
         mainLayout.setBackgroundColor(color);
 
         affirmationNumber = getIntent().getIntExtra("AFFIRMATION", 1);
@@ -92,19 +91,19 @@ public class TrueOrFalse extends ActionBarActivity {
 
         switch (affirmationNumber) {
             case 1:
-                nextAffirmation(TrueOrFalse.class, 2, 1);
+                nextAffirmation(TrueOrFalse.class, 2, 0);
                 break;
             case 2:
-                nextAffirmation(TrueOrFalse.class, 3, 2);
+                nextAffirmation(TrueOrFalse.class, 3, 1);
                 break;
             case 3:
-                nextAffirmation(TrueOrFalse.class, 4, 1);
+                nextAffirmation(TrueOrFalse.class, 4, 0);
                 break;
             case 4:
-                nextAffirmation(TrueOrFalse.class, 5, 2);
+                nextAffirmation(TrueOrFalse.class, 5, 1);
                 break;
             case 5:
-                nextAffirmation(ResultActivity.class, 6, 1);
+                nextAffirmation(ResultActivity.class, 6, 0);
                 intent = new Intent(this, ResultActivity.class);
                 intent.putExtra("FROM", "TrueOrFalse");
                 break;
@@ -129,7 +128,6 @@ public class TrueOrFalse extends ActionBarActivity {
         intent = new Intent(this, classDest);
         intent.putExtra("AFFIRMATION", nAffirmation);
         option = (rgOptions.indexOfChild(findViewById(rgOptions.getCheckedRadioButtonId())) == correctIndex ) ? 1: 0;
-        Log.i("TAGGGGG", ""+option);
         prevOption = getIntent().getIntExtra("OPTION", 0);
         intent.putExtra("OPTION", option + prevOption);
     }

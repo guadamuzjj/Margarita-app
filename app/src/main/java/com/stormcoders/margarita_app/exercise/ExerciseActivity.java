@@ -5,13 +5,10 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.WindowManager;
 
 import com.stormcoders.margarita_app.R;
-import com.stormcoders.margarita_app.activity.Activity;
 import com.stormcoders.margarita_app.activity.MainActivity;
 import com.stormcoders.margarita_app.story.StoryActivity;
 
@@ -21,7 +18,7 @@ import java.util.List;
 
 public class ExerciseActivity extends ActionBarActivity {
 
-    private List<Activity> activity;
+    private List<Exercise> exercise;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +32,45 @@ public class ExerciseActivity extends ActionBarActivity {
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         rv.setLayoutManager(layoutManager);
 
-        activity = new ArrayList<>();
-        activity.add(new Activity("Selección Multiple", "", "#1ABC9C"));
-        activity.add(new Activity("Falso y Verdadero", "", "#F1C40F"));
-        activity.add(new Activity("Ordenar", "", "#2980b9"));
-        activity.add(new Activity("Completar", "", "#2C3E50"));
+        exercise = new ArrayList<>();
+        exercise.add(new Exercise("Selección Multiple", R.mipmap.ic_format_list_numbered_white_36dp));
+        exercise.add(new Exercise("Falso y Verdadero", R.mipmap.ic_format_list_bulleted_white_36dp));
+        exercise.add(new Exercise("Ordenar Ideas", R.mipmap.ic_sort_white_36dp));
+        exercise.add(new Exercise("Completar Párrafos", R.mipmap.ic_format_list_numbered_white_36dp));
 
-        rv.setAdapter(new ExerciseAdapter(activity, R.layout.exercise_row));
+        rv.setAdapter(new ExerciseAdapter(exercise, R.layout.exercise_row));
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent = new Intent();
+        int id = item.getItemId();
+
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        switch (id) {
+            case R.id.home:
+                intent =  new Intent(ExerciseActivity.this, MainActivity.class);
+                break;
+            case R.id.read_poem:
+                intent =  new Intent(ExerciseActivity.this, StoryActivity.class);
+                break;
+            case R.id.exercises:
+                intent =  new Intent(ExerciseActivity.this, ExerciseActivity.class);
+                break;
+            case R.id.credits:
+                intent =  new Intent(ExerciseActivity.this, ExerciseActivity.class);
+                break;
+        }
+
+        startActivity(intent);
+        return super.onOptionsItemSelected(item);
     }
 }

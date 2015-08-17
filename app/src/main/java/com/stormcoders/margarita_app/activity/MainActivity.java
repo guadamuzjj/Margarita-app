@@ -36,8 +36,6 @@ public class MainActivity extends ActionBarActivity {
         activity.add(new Activity("Leer Poema", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "#1ABC9C"));
         activity.add(new Activity("Actividades", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "#F1C40F"));
         activity.add(new Activity("Creditos", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "#2C3E50"));
-        activity.add(new Activity("Preferencias", "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "#2980b9"));
-
         rv.setAdapter(new ActivityAdapter(activity, R.layout.activity_row));
     }
 }

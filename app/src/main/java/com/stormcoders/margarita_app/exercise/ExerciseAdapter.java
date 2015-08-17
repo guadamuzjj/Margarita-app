@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.stormcoders.margarita_app.R;
@@ -19,18 +20,18 @@ import java.util.List;
 
 public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder> {
 
-    List<Activity> activity;
+    List<Exercise> exercise;
     private int itemLayout;
 
-    ExerciseAdapter(List<Activity> activity, int itemLayout) {
-        this.activity = activity;
+    ExerciseAdapter(List<Exercise> exercise, int itemLayout) {
+        this.exercise = exercise;
         this.itemLayout = itemLayout;
     }
 
     @Override
     public void onBindViewHolder(ExerciseViewHolder activityViewHolder, int i) {
-        activityViewHolder.cv.setCardBackgroundColor(Color.parseColor(activity.get(i).color));
-        activityViewHolder.exerciseName.setText(activity.get(i).name);
+        activityViewHolder.icon.setImageResource(exercise.get(i).icon);
+        activityViewHolder.exerciseName.setText(exercise.get(i).title);
     }
 
     @Override
@@ -40,16 +41,16 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
     }
 
     public static class ExerciseViewHolder extends RecyclerView.ViewHolder implements AdapterView.OnClickListener {
-        private Context context;
-        CardView cv;
+        Context context;
         TextView exerciseName;
+        ImageView icon;
 
         ExerciseViewHolder(View itemView) {
             super(itemView);
             context = itemView.getContext();
 
             itemView.setOnClickListener(this);
-            cv = (CardView) itemView.findViewById(R.id.cvExercise);
+            icon = (ImageView) itemView.findViewById(R.id.imageIcon);
             exerciseName = (TextView) itemView.findViewById(R.id.tvExerciseName);
         }
 
@@ -75,6 +76,8 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
                     break;
 
                 case 3:
+                    intent =  new Intent(context, WordsComplete.class);
+                    intent.putExtra("COMPLETE", 1);
                     break;
 
                 default:
@@ -87,6 +90,6 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
 
     @Override
     public int getItemCount() {
-        return activity.size();
+        return exercise.size();
     }
 }

@@ -19,6 +19,7 @@ import com.stormcoders.margarita_app.story.StoryActivity;
 public class ResultActivity  extends ActionBarActivity {
 
     final int ExerciseAnswers = 5;
+    int attempts;
     TextView tvResult;
     ImageView ivResult;
     Button btFinish;
@@ -29,13 +30,13 @@ public class ResultActivity  extends ActionBarActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.result_activity);
-
+        Log.i("ATTEMPTS Received", getIntent().getIntExtra("ATTEMPTS", 3) + "");
+        attempts = getIntent().getIntExtra("ATTEMPTS", 3);
         tvResult = (TextView) findViewById(R.id.tvResult);
         ivResult = (ImageView) findViewById(R.id.ivResult);
         btFinish = (Button) findViewById(R.id.btFinish);
 
         int countOptions = getIntent().getIntExtra("OPTION", 0);
-        Log.i("TEST TAG", "" + countOptions);
         prevActivity = getIntent().getStringExtra("FROM");
 
         if(countOptions == ExerciseAnswers) {
@@ -43,12 +44,15 @@ public class ResultActivity  extends ActionBarActivity {
             ivResult.setImageResource(R.drawable.medalla);
         }
         else {
-            tvResult.setText("Intentalo de Nuevo");
+            tvResult.setText("Inténtalo de nuevo");
             btFinish.setVisibility(View.VISIBLE);
         }
     }
 
     public void tryAgain(View view) {
+        attempts = attempts - 1;
+
+        Log.i("ATTEMPTS onClick", attempts + "");
         Intent intent = new Intent();
 
         switch (prevActivity) {
@@ -63,6 +67,7 @@ public class ResultActivity  extends ActionBarActivity {
                 break;
         }
 
+        intent.putExtra("ATTEMPTS", attempts);
         startActivity(intent);
     }
 
