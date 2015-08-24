@@ -10,13 +10,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="15dp" >
+        android:padding="20dp" >
 
         <ImageView
             android:id="@+id/imageIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="3dp"
+            android:padding="5dp"
             android:background="@color/accentColor"
             android:layout_centerVertical="true"
             android:src="@mipmap/ic_format_list_bulleted_white_36dp"/>
@@ -25,7 +25,7 @@
             android:id="@+id/tvExerciseName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:textSize="32sp"
             android:layout_marginLeft="20dp"
             android:layout_toRightOf="@+id/imageIcon"
             android:layout_centerVertical="true"
