@@ -20,6 +20,7 @@
 
         <activity
             android:name=".activity.MainActivity"
+            android:noHistory="true"
             android:label="@string/app_name" >
         </activity>
 
@@ -44,25 +45,23 @@
         </activity>
 
         <activity
-            android:name=".exercise.ExerciseActivity"
+            android:name=".exercises.ExerciseActivity"
+            android:noHistory="true"
             android:label="@string/title_activity_exercise" >
         </activity>
 
         <activity
-            android:name=".exercise.MultipleChoice"
+            android:name=".exercises.MultipleChoice"
             android:noHistory="true"
             android:label="@string/title_multiple_choice" >
         </activity>
         <activity
-            android:name=".exercise.TrueOrFalse"
+            android:name=".exercises.TrueOrFalse"
             android:noHistory="true"
             android:label="@string/title_true_or_false" >
         </activity>
         <activity
-            android:name=".exercise.SortEvents" >
-        </activity>
-        <activity
-            android:name=".exercise.ResultActivity"
+            android:name=".exercises.ResultActivity"
             android:noHistory="true"
             android:label="@string/title_result_activity" >
         </activity>
