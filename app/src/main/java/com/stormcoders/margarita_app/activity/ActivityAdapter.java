@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.stormcoders.margarita_app.R;
 import com.stormcoders.margarita_app.SettingsActivity;
-import com.stormcoders.margarita_app.exercise.ExerciseActivity;
+import com.stormcoders.margarita_app.exercises.ExerciseActivity;
 import com.stormcoders.margarita_app.story.StoryActivity;
 
 import java.util.List;

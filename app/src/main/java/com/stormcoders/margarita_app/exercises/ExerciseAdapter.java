@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.stormcoders.margarita_app.R;
 import com.stormcoders.margarita_app.activity.MainActivity;
+import com.stormcoders.margarita_app.exercises.drag_and_sort.DragAndSort;
 
 import java.util.List;
 
@@ -69,11 +70,10 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
 
                 case 2:
                     intent =  new Intent(context, DragAndSort.class);
-                    intent.putExtra("SORT", 1);
                     break;
 
                 case 3:
-                    intent =  new Intent(context, WordsComplete.class);
+                    intent =  new Intent(context, Complete.class);
                     intent.putExtra("COMPLETE", 1);
                     break;
 

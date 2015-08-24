@@ -11,7 +11,6 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.stormcoders.margarita_app.ColorLibrary;
 import com.stormcoders.margarita_app.R;
 import com.stormcoders.margarita_app.activity.MainActivity;
 import com.stormcoders.margarita_app.story.StoryActivity;
@@ -19,8 +18,6 @@ import com.stormcoders.margarita_app.story.StoryActivity;
 import java.util.StringTokenizer;
 
 public class MultipleChoice extends ActionBarActivity {
-
-    private ColorLibrary colors = new ColorLibrary();
 
     Intent intent;
     TextView tvQuestion;
@@ -39,8 +36,6 @@ public class MultipleChoice extends ActionBarActivity {
 
         setContentView(R.layout.multiple_choice);
 
-        int color = colors.getColor();
-
         mainLayout = (RelativeLayout) findViewById(R.id.main_layout);
         tvQuestion = (TextView) findViewById(R.id.tvQuestion);
         rgOptions = (RadioGroup) findViewById(R.id.rgOptions);
@@ -48,7 +43,6 @@ public class MultipleChoice extends ActionBarActivity {
         rbOption1 = (RadioButton) findViewById(R.id.rbOption1);
         rbOption2 = (RadioButton) findViewById(R.id.rbOption2);
         rbOption3 = (RadioButton) findViewById(R.id.rbOption3);
-        mainLayout.setBackgroundColor(color);
 
         qestionNumber = getIntent().getIntExtra("QESTION_NUMBER", 1);
 

@@ -11,14 +11,11 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.stormcoders.margarita_app.ColorLibrary;
 import com.stormcoders.margarita_app.R;
 import com.stormcoders.margarita_app.activity.MainActivity;
 import com.stormcoders.margarita_app.story.StoryActivity;
 
 public class TrueOrFalse extends ActionBarActivity {
-
-    private ColorLibrary colors = new ColorLibrary();
 
     Intent intent;
     TextView tvAffirmation;
@@ -34,12 +31,9 @@ public class TrueOrFalse extends ActionBarActivity {
 
         setContentView(R.layout.true_or_false);
 
-        int color = colors.getColor();
-
         mainLayout = (RelativeLayout) findViewById(R.id.main_layout);
         tvAffirmation = (TextView) findViewById(R.id.tvAffirmation);
         rgOptions = (RadioGroup) findViewById(R.id.rgOptionsTrueOrFalse);
-        mainLayout.setBackgroundColor(color);
 
         affirmationNumber = getIntent().getIntExtra("AFFIRMATION", 1);
 
