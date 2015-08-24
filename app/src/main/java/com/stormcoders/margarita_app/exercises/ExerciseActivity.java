@@ -1,4 +1,4 @@
-package com.stormcoders.margarita_app.exercise;
+package com.stormcoders.margarita_app.exercises;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;

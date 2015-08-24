@@ -1,9 +1,7 @@
-package com.stormcoders.margarita_app.exercise;
+package com.stormcoders.margarita_app.exercises;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.stormcoders.margarita_app.R;
-import com.stormcoders.margarita_app.activity.Activity;
 import com.stormcoders.margarita_app.activity.MainActivity;
 
 import java.util.List;
@@ -71,7 +68,7 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
                     break;
 
                 case 2:
-                    intent =  new Intent(context, SortEvents.class);
+                    intent =  new Intent(context, DragAndSort.class);
                     intent.putExtra("SORT", 1);
                     break;
 

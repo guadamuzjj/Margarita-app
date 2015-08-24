@@ -1,4 +1,4 @@
-package com.stormcoders.margarita_app.exercise;
+package com.stormcoders.margarita_app.exercises;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -39,7 +38,7 @@ public class TrueOrFalse extends ActionBarActivity {
 
         mainLayout = (RelativeLayout) findViewById(R.id.main_layout);
         tvAffirmation = (TextView) findViewById(R.id.tvAffirmation);
-        rgOptions = (RadioGroup) findViewById(R.id.rgOptions);
+        rgOptions = (RadioGroup) findViewById(R.id.rgOptionsTrueOrFalse);
         mainLayout.setBackgroundColor(color);
 
         affirmationNumber = getIntent().getIntExtra("AFFIRMATION", 1);
@@ -127,7 +126,10 @@ public class TrueOrFalse extends ActionBarActivity {
     private void nextAffirmation(Class classDest, int nAffirmation, int correctIndex) {
         intent = new Intent(this, classDest);
         intent.putExtra("AFFIRMATION", nAffirmation);
+        Log.i("SELECTED", rgOptions.getCheckedRadioButtonId() + "");
+        Log.i("CORRECT", correctIndex+"");
         option = (rgOptions.indexOfChild(findViewById(rgOptions.getCheckedRadioButtonId())) == correctIndex ) ? 1: 0;
+        Log.i("RESULT", option+"");
         prevOption = getIntent().getIntExtra("OPTION", 0);
         intent.putExtra("OPTION", option + prevOption);
     }

@@ -1,4 +1,4 @@
-package com.stormcoders.margarita_app.exercise;
+package com.stormcoders.margarita_app.exercises;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -63,7 +62,7 @@ public class ResultActivity  extends ActionBarActivity {
                 intent = new Intent(ResultActivity.this, TrueOrFalse.class);
                 break;
             case "SortEvents":
-                intent = new Intent(ResultActivity.this, SortEvents.class);
+                intent = new Intent(ResultActivity.this, DragAndSort.class);
                 break;
         }
 

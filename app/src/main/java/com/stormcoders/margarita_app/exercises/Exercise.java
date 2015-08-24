@@ -1,4 +1,4 @@
-package com.stormcoders.margarita_app.exercise;
+package com.stormcoders.margarita_app.exercises;
 
 public class Exercise {
     public String title;

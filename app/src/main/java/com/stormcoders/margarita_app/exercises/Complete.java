@@ -1,24 +1,18 @@
-package com.stormcoders.margarita_app.exercise;
+package com.stormcoders.margarita_app.exercises;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.stormcoders.margarita_app.ColorLibrary;
 import com.stormcoders.margarita_app.R;
 import com.stormcoders.margarita_app.activity.MainActivity;
 import com.stormcoders.margarita_app.story.StoryActivity;
 
-import java.util.StringTokenizer;
-
-public class WordsComplete extends ActionBarActivity {
+public class Complete extends ActionBarActivity {
 
     private ColorLibrary colors = new ColorLibrary();
     RelativeLayout mainLayout;
@@ -52,16 +46,16 @@ public class WordsComplete extends ActionBarActivity {
 
         switch (id) {
             case R.id.home:
-                intent =  new Intent(WordsComplete.this, MainActivity.class);
+                intent =  new Intent(Complete.this, MainActivity.class);
                 break;
             case R.id.read_poem:
-                intent =  new Intent(WordsComplete.this, StoryActivity.class);
+                intent =  new Intent(Complete.this, StoryActivity.class);
                 break;
             case R.id.exercises:
-                intent =  new Intent(WordsComplete.this, ExerciseActivity.class);
+                intent =  new Intent(Complete.this, ExerciseActivity.class);
                 break;
             case R.id.credits:
-                intent =  new Intent(WordsComplete.this, ExerciseActivity.class);
+                intent =  new Intent(Complete.this, ExerciseActivity.class);
                 break;
         }
 
