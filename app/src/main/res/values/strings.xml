@@ -37,25 +37,36 @@
         <item>Los personajes del cuento son: Margarita, El rey, La princesa, el buen Jesús.</item>
     </string-array>
 
-    <string-array name="sort_events">
-        <item>La niña sale en busca de la estrella.</item>
-        <item>El rey tiene un palacio de diamantes.</item>
-        <item>Margarita, te voy a contar  un cuento.</item>
+    <string-array name="drag_and_sort">
+        <item>La niña sale en busca de la estrella</item>
+        <item>El buen Jesús perdona a la princesa</item>
+        <item>El rey tiene un palacio de diamantes</item>
+        <item>Margarita, te voy a contar  un cuento</item>
         <item>La princesa vio una estrella brillar</item>
-        <item>El rey se enoja con la princesa.</item>
+        <item>El rey se enoja con la princesa</item>
     </string-array>
 
-    <string-array name="options_for_sort">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
+    <string-array name="complete_1">
+        <item>Este era un ______ que tenía</item>
+        <item>un palacio de ______,</item>
+        <item>una ______ hecha del día</item>
+        <item>y un rebaño de ______,</item>
+        <item>un ______ de malaquita,</item>
+        <item>un gran ______ de tisú,</item>
+        <item>y una gentil ______,</item>
+        <item>tan bonita, ______,</item>
+        <item>tan ______ como tú.</item>
     </string-array>
 
-    <string-array name="words_complete">
-        <item>Este era un _ que tenía un palacio de _,una tienda hecha del díay un rebaño de _,un kiosco de malaquita,un gran _ de tisú,y una gentil _,tan bonita,_,tan bonita como tú.</item>
-        <item>La _ se entristece por su dulce _ de luz, cuando entonces aparece sonriendo el Buen _. La _ está bella, pues ya tiene el _ en que lucen, con la _,verso, perla, pluma y flor.</item>
+    <string-array name="complete_2">
+        <item>La ______ se entristece</item>
+        <item>por su dulce ______ de luz,</item>
+        <item>cuando entonces aparece</item>
+        <item>sonriendo el Buen ______.</item>
+        <item>La ______ está bella,</item>
+        <item>pues ya tiene el ______</item>
+        <item>en que lucen, con la ______,</item>
+        <item>verso, perla, ______ y flor.</item>
     </string-array>
 
     <string-array name="options_complete_1">
@@ -65,6 +76,7 @@
         <item>Manto</item>
         <item>Princesita</item>
         <item>Margarita</item>
+        <item>Bonita</item>
     </string-array>
 
     <string-array name="options_complete_2">
@@ -74,6 +86,7 @@
         <item>Princesita</item>
         <item>Prendedor</item>
         <item>Estrella</item>
+        <item>Pluma</item>
     </string-array>
 
 </resources>

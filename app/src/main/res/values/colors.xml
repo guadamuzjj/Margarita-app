@@ -8,4 +8,8 @@
     <color name="backgroundColor">#CACACA</color>
 
     <color name="background_footer">#90000000</color>
+
+    <color name="bg_item_normal_state">#fff0f0f0</color>
+    <color name="bg_item_dragging_state">#ffffdddd</color>
+    <color name="bg_item_dragging_active_state">#ffff9999</color>
 </resources>
