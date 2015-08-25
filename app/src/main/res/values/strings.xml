@@ -88,5 +88,8 @@
         <item>Estrella</item>
         <item>Pluma</item>
     </string-array>
+    <string name="title_activity_soup">SoupActivity</string>
+
+    <string name="hello_world">Hello world!</string>
 
 </resources>
