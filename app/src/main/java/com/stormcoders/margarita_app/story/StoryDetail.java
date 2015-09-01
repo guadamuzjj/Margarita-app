@@ -70,15 +70,10 @@ public class StoryDetail extends AppCompatActivity {
             extendedText.setText(R.string.cap_7);
             playAudio("cap_7");
         }
-        else if (itemDetail.getName() == "Cap 8") {
+        else {
             extendedText.setText(R.string.cap_8);
             playAudio("cap_8");
         }
-        else {
-            extendedText.setText(R.string.cap_9);
-            playAudio("cap_9");
-        }
-
     }
 
     private void loadExtendedImage() {

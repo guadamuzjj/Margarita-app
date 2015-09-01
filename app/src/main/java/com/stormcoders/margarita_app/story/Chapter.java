@@ -37,9 +37,9 @@ public class Chapter {
             new Chapter("Cap 3", R.drawable.cap3),
             new Chapter("Cap 4", R.drawable.cap4),
             new Chapter("Cap 5", R.drawable.cap5),
-            new Chapter("Cap 7", R.drawable.cap6),
-            new Chapter("Cap 8", R.drawable.cap7),
-            new Chapter("Cat Gif", R.drawable.cat_gif),
+            new Chapter("Cap 6", R.drawable.cap6),
+            new Chapter("Cap 7", R.drawable.cap7),
+            new Chapter("Cap 8", R.drawable.cap8),
     };
 
     /**
