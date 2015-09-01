@@ -72,8 +72,10 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Exerci
                 case 2:
                     intent =  new Intent(context, DragAndSort.class);
                     break;
-
                 case 3:
+                    intent = new Intent(context, SoupActivity.class);
+                    break;
+                case 4:
                     intent =  new Intent(context, Complete.class);
                     intent.putExtra("COMPLETE", 1);
                     break;

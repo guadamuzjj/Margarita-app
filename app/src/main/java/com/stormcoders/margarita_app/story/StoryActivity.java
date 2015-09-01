@@ -1,6 +1,7 @@
 package com.stormcoders.margarita_app.story;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
@@ -28,6 +29,11 @@ public class StoryActivity extends AppCompatActivity
         ChapterAdapter adapter = new ChapterAdapter(this);
         gridView.setAdapter(adapter);
         gridView.setOnItemClickListener(this);
+
+        // stop media player
+        MediaPlayer mediaPlayer = new MediaPlayer();
+        if (mediaPlayer.isPlaying())
+            mediaPlayer.stop();
     }
 
     @Override

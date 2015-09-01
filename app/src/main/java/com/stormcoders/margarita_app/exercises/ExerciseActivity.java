@@ -37,6 +37,7 @@ public class ExerciseActivity extends AppCompatActivity {
         exercise.add(new Exercise("Selección Multiple", R.mipmap.ic_format_list_numbered_white_36dp));
         exercise.add(new Exercise("Falso y Verdadero", R.mipmap.ic_format_list_bulleted_white_36dp));
         exercise.add(new Exercise("Ordenar Ideas", R.mipmap.ic_sort_white_36dp));
+        exercise.add(new Exercise("Sopa de Letras", R.mipmap.ic_format_list_bulleted_white_36dp));
         exercise.add(new Exercise("Completar Párrafos", R.mipmap.ic_format_list_numbered_white_36dp));
 
         rv.setAdapter(new ExerciseAdapter(exercise, R.layout.exercise_row));
