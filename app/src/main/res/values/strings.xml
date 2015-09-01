@@ -12,6 +12,7 @@
     <string name="title_true_or_false">Falso o Verdadero</string>
     <string name="title_sort">Ordenar Ideas</string>
     <string name="title_complete">Completar Párrafos</string>
+    <string name="title_credits">Créditos</string>
     <string name="title_result_activity">Resultados</string>
     <string name="nombre_transicion_imagen">imagen_compartida</string>
     <string name="entrar">Entrar</string>
@@ -46,6 +47,15 @@
         <item>El rey se enoja con la princesa</item>
     </string-array>
 
+    <string-array name="drag_and_sort_answer">
+        <item>Margarita, te voy a contar  un cuento</item>
+        <item>El rey tiene un palacio de diamantes</item>
+        <item>La princesa vio una estrella brillar</item>
+        <item>La niña sale en busca de la estrella</item>
+        <item>El rey se enoja con la princesa</item>
+        <item>El buen Jesús perdona a la princesa</item>
+    </string-array>
+
     <string-array name="complete_1">
         <item>Este era un ______ que tenía</item>
         <item>un palacio de ______,</item>
@@ -55,7 +65,20 @@
         <item>un gran ______ de tisú,</item>
         <item>y una gentil ______,</item>
         <item>tan bonita, ______,</item>
-        <item>tan ______ como tú.</item>
+        <item>tan bonita como tú.</item>
+    </string-array>
+
+    <string name="complete_correct_1">Este era un rey que teníaun palacio de diamantes,una tienda hecha del díay un rebaño de elefantes,un kiosco de malaquita,un gran manto de tisú,y una gentil princesita,tan bonita, Margarita,tan bonita como tú.</string>
+
+    <string-array name="options_complete_1">
+        <item>kiosco</item>
+        <item>rey</item>
+        <item>elefantes</item>
+        <item>tienda</item>
+        <item>princesita</item>
+        <item>Margarita</item>
+        <item>diamantes</item>
+        <item>manto</item>
     </string-array>
 
     <string-array name="complete_2">
@@ -66,27 +89,18 @@
         <item>La ______ está bella,</item>
         <item>pues ya tiene el ______</item>
         <item>en que lucen, con la ______,</item>
-        <item>verso, perla, ______ y flor.</item>
+        <item>verso, perla, pluma y flor.</item>
     </string-array>
 
-    <string-array name="options_complete_1">
-        <item>Rey</item>
-        <item>Diamantes</item>
-        <item>Elefantes</item>
-        <item>Manto</item>
-        <item>Princesita</item>
-        <item>Margarita</item>
-        <item>Bonita</item>
-    </string-array>
+    <string name="complete_correct_2">La princesa se entristecepor su dulce flor de luz,cuando entonces aparecesonriendo el Buen Jesús.La princesita está bella,pues ya tiene el prendedoren que lucen, con la estrella,verso, perla, pluma y flor.</string>
 
     <string-array name="options_complete_2">
-        <item>Princesa</item>
-        <item>Flor</item>
         <item>Jesús</item>
-        <item>Princesita</item>
-        <item>Prendedor</item>
-        <item>Estrella</item>
-        <item>Pluma</item>
+        <item>princesa</item>
+        <item>flor</item>
+        <item>princesita</item>
+        <item>prendedor</item>
+        <item>estrella</item>
     </string-array>
 
 </resources>

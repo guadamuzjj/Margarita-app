@@ -48,7 +48,9 @@
     </style>
 
     <style name="button_next">
+        <item name="android:background">@color/accentColor</item>
         <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:textColor">#fff</item>
         <item name="android:text">Siguiente</item>
         <item name="android:layout_alignParentRight">true</item>
     </style>
