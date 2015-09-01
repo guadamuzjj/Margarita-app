@@ -92,4 +92,14 @@
 
     <string name="hello_world">Hello world!</string>
 
+    <string name="cap_1">Este es el texto del capitulo numero 1</string>
+    <string name="cap_2">Este es el texto del capitulo numero 2</string>
+    <string name="cap_3">Este es el texto del capitulo numero 3</string>
+    <string name="cap_4">Este es el texto del capitulo numero 4</string>
+    <string name="cap_5">Este es el texto del capitulo numero 5</string>
+    <string name="cap_6">Este es el texto del capitulo numero 6</string>
+    <string name="cap_7">Este es el texto del capitulo numero 7</string>
+    <string name="cap_8">Este es el texto del capitulo numero 8</string>
+    <string name="cap_9">Este es el texto del capitulo numero 9</string>
+
 </resources>
