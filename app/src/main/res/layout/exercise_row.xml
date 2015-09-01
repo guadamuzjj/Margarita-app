@@ -2,7 +2,7 @@
     android:id="@+id/cvExercise"
     android:foreground="?android:attr/selectableItemBackground"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="130dp"
     android:clickable="true"
     style="@style/card_view">
 

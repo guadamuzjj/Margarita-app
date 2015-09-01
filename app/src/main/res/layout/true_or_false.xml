@@ -25,20 +25,20 @@
             android:textSize="32sp"
             style="@style/exercise_description"/>
 
+        <TextView
+            android:id="@+id/tvAffirmation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="Una princesa se remonta al cielo y corta una estrella para decorar su prendedor."
+            style="@style/exercise_description"/>
+
             <RadioGroup
                 android:id="@+id/rgOptionsTrueOrFalse"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:orientation="vertical" >
-
-                <TextView
-                    android:id="@+id/tvAffirmation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="24sp"
-                    android:text="Una princesa se remonta al cielo y corta una estrella para decorar su prendedor."
-                    style="@style/exercise_description"/>
 
                 <RadioButton
                     android:id="@+id/rbTrue"
@@ -63,7 +63,6 @@
             android:layout_height="wrap_content"
             android:onClick="start"
             style="@style/button_next"/>
-
 
     </RelativeLayout>
 

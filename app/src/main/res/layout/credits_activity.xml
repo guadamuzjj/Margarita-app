@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/mined_logo"
+        android:padding="25dp"
+        android:alpha="0.6" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo_uca"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/imageView" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Desarrolladores"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:layout_marginTop="35dp"
+            android:id="@+id/textView2" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Jonathan Guadamuz \n Oscar Cortez \n Victor Vanegas \n Alexander González \n"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:id="@+id/textView3" />
+
+        <Button
+            android:id="@+id/btAbout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sobre la Aplicación"
+            android:onClick="about"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_centerHorizontal="true" />
+
+    </LinearLayout>
+
+</RelativeLayout>
