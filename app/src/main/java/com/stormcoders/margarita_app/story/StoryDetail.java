@@ -9,10 +9,12 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+import android.media.MediaPlayer;
 
 import com.bumptech.glide.Glide;
 import com.stormcoders.margarita_app.R;
+
+import java.io.IOException;
 
 /**
  * Actividad que muestra la imagen del item extendida
@@ -33,40 +35,65 @@ public class StoryDetail extends ActionBarActivity {
         // Obtener el chapter con el identificador establecido en la actividad principal
         itemDetail = Chapter.getItem(getIntent().getIntExtra(EXTRA_PARAM_ID, 0));
 
-        System.out.println("HOLA HOLA HOLA HOLA");
-        System.out.println(itemDetail.getName());
-        System.out.println(itemDetail.getIdDrawable());
-
         extendedImage = (ImageView) findViewById(R.id.extended_image);
         extendedText = (TextView) findViewById(R.id.extended_text);
 
         loadExtendedImage();
 
         // Hard coded because who cares? I'm a hacker XD
-        if (itemDetail.getName() == "Cap 1")
+
+        if (itemDetail.getName() == "Cap 1") {
             extendedText.setText(R.string.cap_1);
-        else if (itemDetail.getName() == "Cap 2")
+            playAudio("cap_1");
+        }
+        else if (itemDetail.getName() == "Cap 2") {
             extendedText.setText(R.string.cap_2);
-        else if (itemDetail.getName() == "Cap 3")
+            playAudio("cap_2");
+        }
+        else if (itemDetail.getName() == "Cap 3") {
             extendedText.setText(R.string.cap_3);
-        else if (itemDetail.getName() == "Cap 4")
+            playAudio("cap_3");
+        }
+        else if (itemDetail.getName() == "Cap 4") {
             extendedText.setText(R.string.cap_4);
-        else if (itemDetail.getName() == "Cap 5")
+            playAudio("cap_4");
+        }
+        else if (itemDetail.getName() == "Cap 5") {
             extendedText.setText(R.string.cap_5);
-        else if (itemDetail.getName() == "Cap 6")
+            playAudio("cap_5");
+        }
+        else if (itemDetail.getName() == "Cap 6") {
             extendedText.setText(R.string.cap_6);
-        else if (itemDetail.getName() == "Cap 7")
+            playAudio("cap_6");
+        }
+        else if (itemDetail.getName() == "Cap 7") {
             extendedText.setText(R.string.cap_7);
-        else if (itemDetail.getName() == "Cap 8")
+            playAudio("cap_7");
+        }
+        else if (itemDetail.getName() == "Cap 8") {
             extendedText.setText(R.string.cap_8);
-        else
+            playAudio("cap_8");
+        }
+        else {
             extendedText.setText(R.string.cap_9);
+            playAudio("cap_9");
+        }
+
     }
 
     private void loadExtendedImage() {
         Glide.with(extendedImage.getContext())
                 .load(itemDetail.getIdDrawable())
                 .into(extendedImage);
+    }
+
+    private void playAudio(String name) {
+        int resID = getResources().getIdentifier(name, "raw", getPackageName());
+        MediaPlayer mediaPlayer = MediaPlayer.create(this, resID);
+        if (mediaPlayer.isPlaying())
+            mediaPlayer.stop();
+        else
+            mediaPlayer.start();
     }
 
 }
