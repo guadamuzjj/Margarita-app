@@ -1,13 +1,14 @@
 package com.stormcoders.margarita_app.exercises;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.stormcoders.margarita_app.CreditsActivity;
 import com.stormcoders.margarita_app.R;
 import com.stormcoders.margarita_app.activity.MainActivity;
 import com.stormcoders.margarita_app.story.StoryActivity;
@@ -16,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ExerciseActivity extends ActionBarActivity {
+public class ExerciseActivity extends AppCompatActivity {
 
     private List<Exercise> exercise;
 
@@ -66,7 +67,7 @@ public class ExerciseActivity extends ActionBarActivity {
                 intent =  new Intent(ExerciseActivity.this, ExerciseActivity.class);
                 break;
             case R.id.credits:
-                intent =  new Intent(ExerciseActivity.this, ExerciseActivity.class);
+                intent =  new Intent(ExerciseActivity.this, CreditsActivity.class);
                 break;
         }
 

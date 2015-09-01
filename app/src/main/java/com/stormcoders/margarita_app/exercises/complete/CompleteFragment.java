@@ -1,4 +1,4 @@
-package com.stormcoders.margarita_app.exercises;
+package com.stormcoders.margarita_app.exercises.complete;
 
 import android.app.Fragment;
 import android.os.Bundle;

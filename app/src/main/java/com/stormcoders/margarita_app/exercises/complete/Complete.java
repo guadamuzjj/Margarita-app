@@ -1,12 +1,10 @@
-package com.stormcoders.margarita_app.exercises;
+package com.stormcoders.margarita_app.exercises.complete;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.text.InputType;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,17 +13,21 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.stormcoders.margarita_app.CreditsActivity;
 import com.stormcoders.margarita_app.R;
 import com.stormcoders.margarita_app.activity.MainActivity;
+import com.stormcoders.margarita_app.exercises.ExerciseActivity;
+import com.stormcoders.margarita_app.ResultActivity;
 import com.stormcoders.margarita_app.story.StoryActivity;
 
-public class Complete extends ActionBarActivity {
+public class Complete extends AppCompatActivity {
     private String[] options = {};
+    private int llId = 12345;
+
     RelativeLayout mainLayout;
     TextView tvComplete;
 
     Intent intent;
-    int prevOption;
     int completeNumber;
 
     @Override
@@ -84,7 +86,7 @@ public class Complete extends ActionBarActivity {
                 intent =  new Intent(Complete.this, ExerciseActivity.class);
                 break;
             case R.id.credits:
-                intent =  new Intent(Complete.this, ExerciseActivity.class);
+                intent =  new Intent(Complete.this, CreditsActivity.class);
                 break;
         }
 
@@ -96,12 +98,13 @@ public class Complete extends ActionBarActivity {
 
         switch (completeNumber) {
             case 1:
-                nextExercise(Complete.class, 2);
+                String correct = getResources().getString(R.string.complete_correct_1);
+                nextExercise(Complete.class, correct, 2);
                 break;
             case 2:
-                nextExercise(ResultActivity.class, 3);
-                intent = new Intent(this, ResultActivity.class);
-                intent.putExtra("FROM", "COMPLETE");
+                String correct2 = getResources().getString(R.string.complete_correct_2);
+                nextExercise(ResultActivity.class, correct2, 3);
+                intent.putExtra("FROM", "Complete");
                 break;
             default:
                 intent = new Intent(this, ResultActivity.class);
@@ -141,10 +144,36 @@ public class Complete extends ActionBarActivity {
         return items;
     }
 
-    private void nextExercise(Class classDest, int nextItem) {
+    private void nextExercise(Class classDest, String correct, int nextItem) {
+        int actualOption;
+        int prevOption;
+
         intent = new Intent(this, classDest);
         intent.putExtra("COMPLETE", nextItem);
+
+        LinearLayout myLayout = (LinearLayout) findViewById(llId);
+
+        String[] bArray = new String[myLayout.getChildCount()];
+        StringBuilder builder = new StringBuilder();
+
+        for (int i = 0; i < myLayout.getChildCount(); i++) {
+            TextView children = (TextView) myLayout.getChildAt(i);
+            String b = children.getText().toString();
+            bArray[i] = b;
+        }
+
+        for(String s : bArray) {
+            builder.append(s);
+        }
+
+        String Choice = builder.toString();
+
+        actualOption = (Choice.equals(correct) ? 1 : 0);
         prevOption = getIntent().getIntExtra("OPTION", 0);
-        intent.putExtra("OPTION", 5);
+
+        intent.putExtra("OPTION", prevOption + actualOption);
+
+        int attempts = getIntent().getIntExtra("ATTEMPTS", 2);
+        intent.putExtra("ATTEMPTS", attempts);
     }
 }

@@ -2,8 +2,7 @@ package com.stormcoders.margarita_app.exercises;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,17 +10,17 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.stormcoders.margarita_app.CreditsActivity;
 import com.stormcoders.margarita_app.R;
+import com.stormcoders.margarita_app.ResultActivity;
 import com.stormcoders.margarita_app.activity.MainActivity;
 import com.stormcoders.margarita_app.story.StoryActivity;
 
-public class TrueOrFalse extends ActionBarActivity {
+public class TrueOrFalse extends AppCompatActivity {
 
     Intent intent;
     TextView tvAffirmation;
     RadioGroup rgOptions;
-    int prevOption;
-    int option;
     int affirmationNumber;
     RelativeLayout mainLayout;
 
@@ -72,7 +71,7 @@ public class TrueOrFalse extends ActionBarActivity {
                 intent =  new Intent(TrueOrFalse.this, ExerciseActivity.class);
                 break;
             case R.id.credits:
-                intent =  new Intent(TrueOrFalse.this, ExerciseActivity.class);
+                intent =  new Intent(TrueOrFalse.this, CreditsActivity.class);
                 break;
         }
 
@@ -97,7 +96,6 @@ public class TrueOrFalse extends ActionBarActivity {
                 break;
             case 5:
                 nextAffirmation(ResultActivity.class, 6, 0);
-                intent = new Intent(this, ResultActivity.class);
                 intent.putExtra("FROM", "TrueOrFalse");
                 break;
             default:
@@ -111,20 +109,22 @@ public class TrueOrFalse extends ActionBarActivity {
     private void getAffirmation(int index) {
         String[] affirmations = getResources().getStringArray(R.array.affirmations);
 
-        for(int i=0; i < 1; i++){
-            String affirmation = affirmations[index];
-            tvAffirmation.setText(affirmation);
-        }
+        String affirmation = affirmations[index];
+        tvAffirmation.setText(affirmation);
     }
 
     private void nextAffirmation(Class classDest, int nAffirmation, int correctIndex) {
+        int actualOption;
+        int prevOption;
+
         intent = new Intent(this, classDest);
         intent.putExtra("AFFIRMATION", nAffirmation);
-        Log.i("SELECTED", rgOptions.getCheckedRadioButtonId() + "");
-        Log.i("CORRECT", correctIndex+"");
-        option = (rgOptions.indexOfChild(findViewById(rgOptions.getCheckedRadioButtonId())) == correctIndex ) ? 1: 0;
-        Log.i("RESULT", option+"");
+
+        actualOption = (rgOptions.indexOfChild(findViewById(rgOptions.getCheckedRadioButtonId())) == correctIndex ) ? 1: 0;
         prevOption = getIntent().getIntExtra("OPTION", 0);
-        intent.putExtra("OPTION", option + prevOption);
+        intent.putExtra("OPTION", prevOption + actualOption);
+
+        int attempts = getIntent().getIntExtra("ATTEMPTS", 2);
+        intent.putExtra("ATTEMPTS", attempts);
     }
 }

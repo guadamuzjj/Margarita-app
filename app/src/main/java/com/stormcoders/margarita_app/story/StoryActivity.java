@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.util.Pair;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,7 +15,7 @@ import android.widget.GridView;
 
 import com.stormcoders.margarita_app.R;
 
-public class StoryActivity extends ActionBarActivity
+public class StoryActivity extends AppCompatActivity
         implements AdapterView.OnItemClickListener {
 
     @Override

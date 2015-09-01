@@ -2,7 +2,7 @@ package com.stormcoders.margarita_app.exercises;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,13 +11,15 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.stormcoders.margarita_app.CreditsActivity;
 import com.stormcoders.margarita_app.R;
+import com.stormcoders.margarita_app.ResultActivity;
 import com.stormcoders.margarita_app.activity.MainActivity;
 import com.stormcoders.margarita_app.story.StoryActivity;
 
 import java.util.StringTokenizer;
 
-public class MultipleChoice extends ActionBarActivity {
+public class MultipleChoice extends AppCompatActivity {
 
     Intent intent;
     TextView tvQuestion;
@@ -25,8 +27,6 @@ public class MultipleChoice extends ActionBarActivity {
     RadioButton rbOption1;
     RadioButton rbOption2;
     RadioButton rbOption3;
-    int prevOption;
-    int option;
     int qestionNumber;
     RelativeLayout mainLayout;
 
@@ -81,7 +81,7 @@ public class MultipleChoice extends ActionBarActivity {
                 intent =  new Intent(MultipleChoice.this, ExerciseActivity.class);
                 break;
             case R.id.credits:
-                intent =  new Intent(MultipleChoice.this, ExerciseActivity.class);
+                intent =  new Intent(MultipleChoice.this, CreditsActivity.class);
                 break;
         }
 
@@ -119,28 +119,29 @@ public class MultipleChoice extends ActionBarActivity {
     private void getQuestion(int index) {
         String[] multiplChoices = getResources().getStringArray(R.array.multiple_choices);
 
-        for(int i=0; i < 1; i++){
-            StringTokenizer tokens = new StringTokenizer(multiplChoices[index], "|");
-            String question = tokens.nextToken();
-            String options = tokens.nextToken();
+        StringTokenizer tokens = new StringTokenizer(multiplChoices[index], "|");
+        String question = tokens.nextToken();
+        String options = tokens.nextToken();
 
-            String[] option = options.split(",");
+        String[] option = options.split(",");
 
-            tvQuestion.setText(question);
-            rbOption1.setText(option[0]);
-            rbOption2.setText(option[1]);
-            rbOption3.setText(option[2]);
-        }
+        tvQuestion.setText(question);
+        rbOption1.setText(option[0]);
+        rbOption2.setText(option[1]);
+        rbOption3.setText(option[2]);
     }
 
     private void nextQuestion(Class classDest, int nQuestion, int correctIndex) {
+        int actualOption;
+        int prevOption;
+
         intent = new Intent(this, classDest);
         intent.putExtra("QESTION_NUMBER", nQuestion);
-        option = (rgOptions.indexOfChild(findViewById(rgOptions.getCheckedRadioButtonId())) == correctIndex ) ? 1: 0;
+        actualOption = (rgOptions.indexOfChild(findViewById(rgOptions.getCheckedRadioButtonId())) == correctIndex ) ? 1: 0;
         prevOption = getIntent().getIntExtra("OPTION", 0);
-        intent.putExtra("OPTION", option + prevOption);
+        intent.putExtra("OPTION", prevOption + actualOption);
 
-        int attempts = getIntent().getIntExtra("ATTEMPTS", 3);
+        int attempts = getIntent().getIntExtra("ATTEMPTS", 2);
         intent.putExtra("ATTEMPTS", attempts);
     }
 }

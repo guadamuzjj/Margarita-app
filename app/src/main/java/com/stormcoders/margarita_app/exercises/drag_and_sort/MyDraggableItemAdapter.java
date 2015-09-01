@@ -29,7 +29,7 @@ public class MyDraggableItemAdapter
 
         public MyViewHolder(View v) {
             super(v);
-            mContainer = (FrameLayout) v.findViewById(R.id.container);
+            mContainer = (FrameLayout) v.findViewById(R.id.flContainer);
             mDragHandle = v.findViewById(R.id.drag_handle);
             mTextView = (TextView) v.findViewById(android.R.id.text1);
         }
@@ -66,7 +66,7 @@ public class MyDraggableItemAdapter
 
         // set text
         holder.mTextView.setText(item.getText());
-
+        holder.mTextView.setId(position);
         // set background resource (target view ID: container)
         final int dragState = holder.getDragStateFlags();
 

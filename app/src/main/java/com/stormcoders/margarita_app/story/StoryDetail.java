@@ -5,7 +5,7 @@ package com.stormcoders.margarita_app.story;
  */
 import android.os.Bundle;
 
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 
@@ -15,7 +15,7 @@ import com.stormcoders.margarita_app.R;
 /**
  * Actividad que muestra la imagen del item extendida
  */
-public class StoryDetail extends ActionBarActivity {
+public class StoryDetail extends AppCompatActivity {
 
     public static final String EXTRA_PARAM_ID = "com.stormcoders.margarita_app.extra.ID";
     public static final String VIEW_NAME_HEADER_IMAGE = "imagen_compartida";

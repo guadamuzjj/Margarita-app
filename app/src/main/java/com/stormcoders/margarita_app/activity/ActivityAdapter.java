@@ -11,8 +11,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.TextView;
 
+import com.stormcoders.margarita_app.CreditsActivity;
 import com.stormcoders.margarita_app.R;
-import com.stormcoders.margarita_app.SettingsActivity;
 import com.stormcoders.margarita_app.exercises.ExerciseActivity;
 import com.stormcoders.margarita_app.story.StoryActivity;
 
@@ -72,10 +72,7 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.Activi
                     break;
 
                 case 2:
-                    break;
-
-                case 3:
-                    intent =  new Intent(context, SettingsActivity.class);
+                    intent =  new Intent(context, CreditsActivity.class);
                     break;
 
                 default:

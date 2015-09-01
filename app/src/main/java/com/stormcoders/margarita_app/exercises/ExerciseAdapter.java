@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.stormcoders.margarita_app.R;
 import com.stormcoders.margarita_app.activity.MainActivity;
+import com.stormcoders.margarita_app.exercises.complete.Complete;
 import com.stormcoders.margarita_app.exercises.drag_and_sort.DragAndSort;
 
 import java.util.List;
