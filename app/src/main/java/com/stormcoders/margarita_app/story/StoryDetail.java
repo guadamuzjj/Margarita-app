@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.media.MediaPlayer;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.stormcoders.margarita_app.R;
 
 import java.io.IOException;
@@ -79,6 +80,8 @@ public class StoryDetail extends AppCompatActivity {
     private void loadExtendedImage() {
         Glide.with(extendedImage.getContext())
                 .load(itemDetail.getIdDrawable())
+                .asGif()
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
                 .into(extendedImage);
     }
 

@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.stormcoders.margarita_app.R;
 
 /**
@@ -56,6 +57,8 @@ public class ChapterAdapter extends BaseAdapter {
         final Chapter item = getItem(position);
         Glide.with(chapterImage.getContext())
                 .load(item.getIdDrawable())
+                .asGif()
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
                 .into(chapterImage);
 
         chapterName.setText(item.getName());
